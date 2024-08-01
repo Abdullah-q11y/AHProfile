@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>سيرتي الذاتية </title><style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap');
+
+    :root {
+        --primary-color: #1a1a2e;
+        --secondary-color: #16213e;
+        --accent-color: #0f3460;
+        --text-color: #e94560;
+        --light-text: #f1f1f1;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Tajawal', sans-serif;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: var(--light-text);
+        line-height: 1.6;
+        direction: rtl;
+        min-height: 100vh;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    header {
+        background-color: rgba(26, 26, 46, 0.8);
+        backdrop-filter: blur(10px);
+        color: var(--light-text);
+        text-align: center;
+        padding: 50px 0;
+        margin-bottom: 30px;
+        border-bottom: 2px solid var(--accent-color);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 20px;
+        border: 4px solid var(--accent-color);
+        box-shadow: 0 0 20px rgba(15, 52, 96, 0.5);
+        transition: all 0.3s ease;
+        animation: profileImageAnimation 5s infinite alternate;
+    }
+
+    @keyframes profileImageAnimation {
+        0% {
+            transform: scale(1) rotate(0deg);
+            box-shadow: 0 0 20px rgba(15, 52, 96, 0.5);
+        }
+        50% {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 0 30px rgba(233, 69, 96, 0.7);
+        }
+        100% {
+            transform: scale(1) rotate(0deg);
+            box-shadow: 0 0 20px rgba(15, 52, 96, 0.5);
+        }
+    }
+
+    h1 {
+        font-size: 3.5em;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .subtitle {
+        font-size: 1.3em;
+        opacity: 0.9;
+        margin-bottom: 20px;
+    }
+
+    .download-cv {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: var(--light-text);
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: bold;
+    }
+
+    .download-cv:hover {
+        background-color: var(--text-color);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+    }
+
+    section {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+        color: var(--text-color);
+        margin-bottom: 20px;
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 10px;
+        font-size: 2em;
+    }
+
+    .projects-container, .books-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .project, .book {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        width: calc(33.33% - 14px);
+        margin-bottom: 20px;
+    }
+
+    .project:hover, .book:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .project img, .book img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .project:hover img, .book:hover img {
+        transform: scale(1.05);
+    }
+
+    .project-info, .book-info {
+        padding: 20px;
+    }
+
+    .project h3, .book h3 {
+        color: var(--text-color);
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .project p, .book p {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+    }
+
+    .project-link, .book-link {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: var(--light-text);
+        padding: 8px 15px;
+        border-radius: 20px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.9em;
+    }
+
+    .project-link:hover, .book-link:hover {
+        background-color: var(--text-color);
+        transform: translateY(-3px);
+    }
+
+    .book {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .book img {
+        height: 300px;
+    }
+
+    .contact-section {
+        background-color: rgba(15, 52, 96, 0.8);
+        padding: 50px 0;
+        text-align: center;
+        border-radius: 15px;
+        margin-top: 50px;
+    }
+
+    .contact-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .contact-button {
+        background-color: var(--accent-color);
+        color: var(--light-text);
+        padding: 12px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border: 2px solid transparent;
+    }
+
+    .contact-button:hover {
+        background-color: transparent;
+        border-color: var(--accent-color);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(15, 52, 96, 0.4);
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .social-icons a {
+        color: var(--light-text);
+        font-size: 24px;
+        transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        color: var(--text-color);
+        transform: translateY(-3px);
+    }
+
+    .copyright {
+        font-size: 0.9em;
+        opacity: 0.7;
+        margin-top: 20px;
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+
+    .float {
+        animation: float 4s ease-in-out infinite;
+    }
+
+    @media (max-width: 767px) {
+        h1 {
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 1.7em;
+        }
+
+        .project h3, .book h3 {
+            font-size: 1.3em;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+        }
+
+        .project, .book {
+            width: 100%;
+        }
+    }
+</style></head>
+<body>
+    <header>
+        <img src="images/pic2.jpg" alt="صورة شخصية " class="profile-image" width="200" height="200">
+        <h1 class="float">عبدالله حسين</h1>
+        <p class="subtitle">مطور تطبيقات ومواقع | مصمم جرافيك | كاتب</p>
+        <a href="pdf/cv.pdf" class="download-cv" download>تحميل السيرة الذاتية</a>
+    </header>
+
+    <div class="container">
+        <section id="intro" class="fade-in">
+            <h2>نبذة عني</h2>
+            <p>مرحبا! انا عبدالله مطور تطبيقات ومواقع إلكترونية، مصمم جرافيك، ومسوق رقمي. أتمتع بمهارات متميزة في تنفيذ الحملات الإعلانية عبر وسائل التواصل الاجتماعي ومنصة جوجل. أسعى دائمًا لتحقيق نتائج فعالة من خلال زيادة التفاعل والوصول إلى جمهور أوسع، مما يسهم في تعزيز العلامة التجارية وتحقيق أهداف التسويق</p>
+        </section>
+
+        <section id="web-projects" class="fade-in">
+            <h2>مشاريع تطوير التطبيقات والمواقع</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <img src="images/ارجوان3.png " alt="صورة لواجهة تطبيق إدارة المهام" width="300" height="200">
+                    <div class="project-info">
+                        <h3> تطبيق ويب و أندرويد</h3>
+                        <p>تطبيق للإعلانات لنشر وتصفح الإعلانات المبوبة</p>
+                        <a href="https://example.com/project1-details" class="project-link">تفاصيل المشروع</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/تقدير.png" alt="صورة لموقع متجر إلكتروني" width="300" height="200">
+                    <div class="project-info">
+                        <h3>موقع تقدير</h3>
+                        <p>موقع لتقدير سعر السيارت المستعملة من خلال الذكاء الإصطناعي</p>
+                        <a href="https://example.com/project2-details" class="project-link">تفاصيل المشروع</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/رامه.png" alt="صورة لتطبيق الهاتف المحمول" width="300" height="200">
+                    <div class="project-info">
+                        <h3>تطبيق الهاتف المحمول</h3>
+                        <p> يعمل هذا الموقع على توليد جداول الإكسل باستخدام الذكاء الاصطناعي، بالإضافة إلى تحليلها وتضمين صور المشاريع وبياناتها وبيانات الموظفين  </p>
+                        <a href="https://example.com/project3-details" class="project-link">تفاصيل المشروع</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="design-projects" class="fade-in">
+            <h2>مشاريع تصميم الجرافيك</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <img src="images/دروب.jpg" alt="تصميم شعار لشركة تأجير سيارات" width="300" height="200">
+                    <div class="project-info">
+                        <h3>شعار شركة تأجير سيارات</h3>
+                        <p>تصميم هوية و شعار حديث وديناميكي لشركة تأجير سيارات .</p>
+                        <a href="pdf/هوية بصرية.pdf" class="project-link">تفاصيل المشروع</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/انستغرام.png" alt="تصميم غلاف مجلة" width="300" height="200">
+                    <div class="project-info">
+                        <h3>منشورات سوشال ميديا </h3>
+                        <p>تصميم منشورات سوشال ميديا لشؤكة تركيب مظلات سيارات  </p>
+                        <a href="pdf/CA_cars.pdf" class="project-link">تفاصيل المشروع</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/رامه بروفايل.png"تصميم هوية بصرية" width="300" height="200">
+                    <div class="project-info">
+                        <h3> بروفايل شركة </h3>
+                        <p> ملف تعريفي لشركة مقاولات عامة </p>
+                        <a href="https://example.com/design3-details" class="project-link">تفاصيل المشروع</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="books" class="fade-in">
+            <h2>الكتب والروايات</h2>
+            <div class="books-container">
+                <div class="book">
+                    <img src="images/غلاف مذكرة أعتقال.png" alt="غلاف كتاب 'رحلة في عالم البرمجة'" width="200" height="300">
+                    <div class="book-info">
+                        <h3> مذكرة إعتذار  </h3>
+                        <p>كتاب رواية قصيرة تسلط الضوء على قضية مجمتمعية وتحاكي اسلوب  أنطون تشيخوف.</p>
+                        <a href="https://example.com/book1-details" class="book-link">تفاصيل الكتاب</a>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="book2.jpg" alt="غلاف رواية 'ما وراء الشاشة'" width="200" height="300">
+                    <div class="book-info">
+                        <h3>ما وراء الشاشة</h3>
+                        <p>رواية خيال علمي تستكشف العلاقة بين البشر والتكنولوجيا في المستقبل القريب.</p>
+                        <a href="https://example.com/book2-details" class="book-link">تفاصيل الكتاب</a>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="book3.jpg" alt="غلاف كتاب 'أسرار التصميم الجرافيكي'" width="200" height="300">
+                    <div class="book-info">
+                        <h3>أسرار التصميم الجرافيكي</h3>
+                        <p>كتاب يكشف عن أسرار وتقنيات التصميم الجرافيكي للمبتدئين والمحترفين.</p>
+                        <a href="https://example.com/book3-details" class="book-link">تفاصيل الكتاب</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <section id="contact" class="fade-in contact-section">
+            <h2>تواصل معي</h2>
+            <div class="contact-buttons">
+                <a href="https://wa.me/1234567890" class="contact-button" target="_blank">تواصل عبر الواتساب</a>
+                <a href="tel:+971545709031" class="contact-button">اتصل بي</a>
+                <a href="mailto:laptop0168@gmail.com" class="contact-button">أرسل بريدًا إلكترونيًا</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com" target="_blank" aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter Profile">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            <p class="copyright">جميع الحقوق محفوظة © 2024 عبدالله حسين</p>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+        
+
+        // إضافة تأثير الماوس المتحرك
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.createElement('div');
+            cursor.className = 'cursor-effect';
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+            document.body.appendChild(cursor);
+
+            setTimeout(() => {
+                cursor.remove();
+            }, 1000);
+        });
+    </script>
+
+    <style>
+        .cursor-effect {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--text-color);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.5;
+            transform: translate(-50%, -50%);
+            animation: cursorEffect 1s ease-out;
+            z-index: 9999;
+        }
+
+        @keyframes cursorEffect {
+            0% {
+                opacity: 0.5;
+                width: 10px;
+                height: 10px;
+            }
+            100% {
+                opacity: 0;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        /* إضافة تأثير التمرير السلس */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* تحسين الانتقال بين الأقسام */
+        section {
+            transition: all 0.5s ease;
+        }
+
+        /* تحسين حركة الصور عند التحويم */
+        .project img, .book img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project img:hover, .book img:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* إضافة تأثير الظل للنص */
+        p {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* تحسين أزرار التواصل */
+        .contact-button {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .contact-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+
+        .contact-button:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</body></html>
